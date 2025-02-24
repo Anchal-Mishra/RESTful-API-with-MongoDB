@@ -1,48 +1,66 @@
-🚗 Car API
-A simple Express.js REST API for managing car data with CRUD operations.
+🚀 Car API
+A simple REST API for managing car data using Node.js, Express, and MongoDB Atlas.
 
-🚀 Getting Started
+📌 Installation & Setup
+1️⃣ Clone the repository
+git clone https://github.com/your-username/car-api.git
+cd car-api
 
-📌 Install Dependencies
-npm install express
+
+2️⃣ Install dependencies
+npm install
 
 
-📌 Run the Server
-node server.js
-OR using nodemon (recommended):
+3️⃣ Create a .env file in the root folder and add:
+MONGO_URI=mongodb+srv://CarsData:<your_password>@carsdata.autnf.mongodb.net/
+PORT=5000
 
+
+4️⃣ Run the server
+npm start
+OR using Nodemon
 nodemon server.js
+
+
 📮 API Endpoints
+
+🔹 Create a Car
+POST /api/cars
+📌 Body (JSON)
+{
+  "carName": "Ferrari F8",
+  "carType": "Supercar",
+  "releaseYear": 2020
+}
 
 
 🔹 Get All Cars
-Method: GET
-http://localhost:5000/api/cars
+GET /api/cars
 
 
-🔹 Get Car by ID
-Method: GET
-http://localhost:5000/api/cars/:id
+🔹 Get a Car by ID
+GET /api/cars/{car_id}
 
 
-🔹 Add a New Car
-Method: POST
-http://localhost:5000/api/cars
+🔹 Update a Car by ID
+PUT /api/cars/{car_id}
+📌 Body (JSON)
+{
+  "carName": "Tesla Model S Plaid",
+  "releaseYear": 2022
+}
 
 
-🔹 Update a Car
-Method: PUT
-http://localhost:5000/api/cars/:id
+🔹 Delete a Car by ID
+DELETE /api/cars/{car_id}
 
 
-🔹 Delete a Car
-Method: DELETE
-http://localhost:5000/api/cars/:id
-
-
-🔥 Middleware
-Validation Middleware: Ensures required fields for POST and PUT requests.
-Logging Middleware: Logs all incoming API requests.
+🔧 Tools & Technologies
+Node.js
+Express.js
+MongoDB Atlas
+Mongoose
+ThunderClient/Postman
 
 
 📌 Author
