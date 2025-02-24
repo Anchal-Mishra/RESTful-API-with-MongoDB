@@ -14,7 +14,7 @@ const validateCar = (req, res, next) => {
   next();
 };
 
-// 📌 Get all cars
+// Get all cars
 router.get("/cars", async (req, res) => {
   try {
     const cars = await Car.find();
@@ -24,7 +24,7 @@ router.get("/cars", async (req, res) => {
   }
 });
 
-// 📌 Get a car by ID
+// Get a car by ID
 router.get("/cars/:id", async (req, res) => {
   try {
     const car = await Car.findById(req.params.id);
@@ -35,7 +35,7 @@ router.get("/cars/:id", async (req, res) => {
   }
 });
 
-// 📌 Add a new car
+// Add a new car
 router.post("/cars", validateCar, async (req, res) => {
   try {
     const newCar = await Car.create(req.body);
@@ -45,7 +45,7 @@ router.post("/cars", validateCar, async (req, res) => {
   }
 });
 
-// 📌 Update an existing car
+// Update an existing car
 router.put("/cars/:id", validateCar, async (req, res) => {
   try {
     const updatedCar = await Car.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -57,7 +57,7 @@ router.put("/cars/:id", validateCar, async (req, res) => {
   }
 });
 
-// 📌 Delete a car by ID
+// Delete a car by ID
 router.delete("/cars/:id", async (req, res) => {
   try {
     const deletedCar = await Car.findByIdAndDelete(req.params.id);
